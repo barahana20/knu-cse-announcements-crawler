@@ -533,12 +533,12 @@ function img\_step\_move(file\_no,mode){
 
 
 조회수
-143
+148
 
 
 
 
-﻿﻿﻿﻿※자세한 내용은 소프트웨어교육원 홈페이지 참조. **☞** [**대경권 SW중심대학 간 학점교류 참여학생 모집**](https://swedu.knu.ac.kr/05_sub/01_sub.html?no=236&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_1#contents)![](http://cse.knu.ac.kr/_files/userfile/image20220117102506_jooep.jpg)
+﻿﻿﻿﻿※자세한 내용은 소프트웨어교육원 홈페이지 참조. **☞** [**대경권 SW중심대학 간 학점교류 참여학생 모집**](https://swedu.knu.ac.kr/05_sub/01_sub.html?no=236&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_1#contents)![](https://computer.knu.ac.kr/_files/userfile/image20220117102506_jooep.jpg)
 
   
 
