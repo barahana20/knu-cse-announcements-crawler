@@ -1,1 +1,1 @@
-﻿﻿s)![](https://computer.knu.ac.kr/_files/userfile/image20220117102506_jooep.jpg)
+﻿﻿![](https://computer.knu.ac.kr/_files/userfile/image20220117102506_jooep.jpg)
