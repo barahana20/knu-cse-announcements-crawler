@@ -3,9 +3,9 @@ import requests
 from bs4 import BeautifulSoup
 import os
 
-URL = "https://computer.knu.ac.kr/06_sub/02_sub.html?page=%s&key=&keyfield=&category=&bbs_code=Site_BBS_25"
+URL = "https://computer.knu.ac.kr/06_sub/02_sub.html?no=3676&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25"
 
-res = requests.get(URL % 1)
+res = requests.get(URL)
 soup = BeautifulSoup(res.text, 'html.parser') 
 # soup.
 # h = markdownify.markdownify(soup.currentTag, heading_style="ATX")

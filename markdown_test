@@ -504,7 +504,7 @@ function preview\_window2(image,tbl){
  window.open('/pack/bbs/image\_preview2.php?tbl='+tbl+'&image='+image,"previewWin",'width='+300+',height='+200+',top='+(screen.height-200)/2+',left='+(screen.width-300)/2+',toolbar=no,resizable=no,status=no');
 }
 function img\_step\_move(file\_no,mode){
- location.href="?no=&fpage=&page=1&bbs\_cmd=img\_step\_exe&mode="+mode+"&file\_no="+file\_no+"&key=&keyfield=&category=&bbs\_code=Site\_BBS\_25";
+ location.href="?no=3676&fpage=&page=1&bbs\_cmd=img\_step\_exe&mode="+mode+"&file\_no="+file\_no+"&key=&keyfield=&category=&bbs\_code=Site\_BBS\_25";
 }
 
 
@@ -518,123 +518,43 @@ function img\_step\_move(file\_no,mode){
 
 
 
+2022-1학기 대경권 SW중심대학 간 학점교류 참여학생 모집(마일리지 적립)
 
 
 
 
 
-| 번호 | 제목 | 작성자 | 등록일 | 조회수 |
-| --- | --- | --- | --- | --- |
-| 공지 |  [[국제교류] 2022학년도 1학기 외국인 학부 신·편입생 튜터 프로그램 참가자 모집안내](?no=3674&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[국제교류] 2022학년도 1학기 외국인 학부 신·편입생 튜터 프로그램 참가자 모집안내")  | 임초록 | 2022-01-14 | 254 |
-| 공지 |  [D-0 [모집] 공공기관 채용 합동 설명회 참가자 모집](?no=3673&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[모집] 공공기관 채용 합동 설명회 참가자 모집")  | 방원길 | 2022-01-14 | 224 |
-| 공지 |  [D-11 [안내] ICT COG Academy 블록체인 입문과정 교육](?no=3672&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[안내] ICT COG Academy 블록체인 입문과정 교육")  | 성민기 | 2022-01-13 | 224 |
-| 공지 |  [﻿﻿﻿﻿2021 겨울학기 CSE 대학원 학부연구생 선발 결과 알림](?no=3668&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "﻿﻿﻿﻿2021 겨울학기 CSE  대학원  학부연구생 선발 결과 알림")  | 공미화 | 2022-01-03 | 606 |
-| 공지 |  [D-4 [모집] 제1회 지역선도대학육성사업 프로그램 참여 에세이 공모전 개최 안내](?no=3666&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[모집] 제1회 지역선도대학육성사업 프로그램 참여 에세이 공모전 개최 안내")  | 방원길 | 2021-12-30 | 721 |
-| 공지 |  [D-4 [모집] 대경권 SW산학프로젝트 경진대회 개최 안내](?no=3665&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[모집] 대경권 SW산학프로젝트 경진대회 개최 안내")  | 방원길 | 2021-12-30 | 1,177 |
-| 공지 |  [D-10 [장학] 2021학년도 2학기 학부생 학업지원 장학금 지원대상자 제출 안내 (~1/27)](?no=3659&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[장학] 2021학년도 2학기 학부생 학업지원 장학금 지원대상자 제출 안내 (~1/27)")  | 임초록 | 2021-12-23 | 1,090 |
-| 공지 |  [2021학년도 학생의료공제회 예방접종비 지원 사업 실시 안내](?no=3285&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "2021학년도 학생의료공제회 예방접종비 지원 사업 실시 안내")  | 임초록 | 2021-03-30 | 9,486 |
-| 공지 |  [인재개발원 진로취업지원 상시 서비스](?no=3284&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "인재개발원 진로취업지원 상시 서비스")  | 임초록 | 2021-03-30 | 9,553 |
-| 공지 |  [필독] 학사 공지 & ABEEK 공지 안내](?no=2769&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "필독] 학사 공지 & ABEEK 공지 안내")  | 김미영 | 2019-11-12 | 15,571 |
-| 3398 |  [[국제교류] 2022학년도 1학기 외국인 학부 신·편입생 튜터 프로그램 참가자 모집안내](?no=3674&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[국제교류] 2022학년도 1학기 외국인 학부 신·편입생 튜터 프로그램 참가자 모집안내")
-   | 임초록 | 2022-01-14 | 254 |
-| 3397 |  [D-0 
- [모집] 공공기관 채용 합동 설명회 참가자 모집](?no=3673&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[모집] 공공기관 채용 합동 설명회 참가자 모집") | 방원길 | 2022-01-14 | 224 |
-| 3396 |  [D-11 
- [안내] ICT COG Academy 블록체인 입문과정 교육](?no=3672&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[안내] ICT COG Academy 블록체인 입문과정 교육")
-   | 성민기 | 2022-01-13 | 224 |
-| 3395 |  [[교외] 스마트양식장 뱀장어 평균 중량 인식모델 개발 온라인 해커톤](?no=3671&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[교외] 스마트양식장 뱀장어 평균 중량 인식모델 개발 온라인 해커톤") | 임초록 | 2022-01-12 | 286 |
-| 3394 | [[코로나-19] 방역관리 협조 요청(22.1.3.기준)](?no=3670&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "<font color=red>[코로나-19] 방역관리 협조 요청(22.1.3.기준)</font color>") | 임초록 | 2022-01-03 | 183 |
-| 3393 |  [설문조사 시행 (지역선도 마일리지 5점 지급)](?no=3669&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "설문조사 시행 (지역선도 마일리지 5점 지급)") | 이승희 | 2022-01-04 | 786 |
-| 3392 |  [﻿﻿﻿﻿2021 겨울학기 CSE 대학원 학부연구생 선발 결과 알림](?no=3668&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "﻿﻿﻿﻿2021 겨울학기 CSE  대학원  학부연구생 선발 결과 알림")
-   | 공미화 | 2022-01-03 | 606 |
-| 3391 |  [D-4 
- [모집] 제1회 지역선도대학육성사업 프로그램 참여 에세이 공모전 개최 안내](?no=3666&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[모집] 제1회 지역선도대학육성사업 프로그램 참여 에세이 공모전 개최 안내")
-   | 방원길 | 2021-12-30 | 721 |
-| 3390 |  [D-4 
- [모집] 대경권 SW산학프로젝트 경진대회 개최 안내](?no=3665&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[모집] 대경권 SW산학프로젝트 경진대회 개최 안내")
-   | 방원길 | 2021-12-30 | 1,177 |
-| 3389 |  [[국제교류] 2022학년도 1학기 KNU 버디 프로그램 참가자 모집 안내](?no=3664&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[국제교류] 2022학년도 1학기 KNU 버디 프로그램 참가자 모집 안내")
-   | 임초록 | 2021-12-30 | 523 |
-| 3388 |  [2021년 대학생활 멘토링/힐링 프로그램 책자 안내(E-Book)](?no=3663&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "2021년 대학생활 멘토링/힐링 프로그램 책자 안내(E-Book)") | 성민기 | 2021-12-28 | 689 |
-| 3387 |  [12/29(수) 2022학년도 합격자를 위한 첫 만남 전공 콘서트 안내(★예비신입생★)](?no=3662&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "12/29(수) 2022학년도 합격자를 위한 첫 만남 전공 콘서트 안내(★예비신입생★)")
-     | 이은주 | 2021-12-28 | 422 |
-| 3386 |  [2022 AWS Korea Job Fairs 안내](?no=3661&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "2022 AWS Korea Job Fairs 안내")
-   | 성민기 | 2021-12-24 | 657 |
-| 3385 |  [제15회 「다시 듣고 싶은 수업」 에세이 공모전 안내](?no=3660&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "제15회 「다시 듣고 싶은 수업」 에세이 공모전 안내")
-   | 도현미 | 2021-12-24 | 167 |
-| 3384 |  [D-10 
- [장학] 2021학년도 2학기 학부생 학업지원 장학금 지원대상자 제출 안내 (~1/27)](?no=3659&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[장학] 2021학년도 2학기 학부생 학업지원 장학금 지원대상자 제출 안내 (~1/27)")
-   | 임초록 | 2021-12-23 | 1,090 |
-| 3383 |  [[모집] IT교육센터 SW단기강좌 개설 안내](?no=3658&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[모집] IT교육센터 SW단기강좌 개설 안내") | 방원길 | 2021-12-22 | 928 |
-| 3382 |  [2021학년도 CTL 학습지원 프로그램 참여 수기 공모전(KETFLIX) 개최 안내](?no=3657&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "2021학년도 CTL 학습지원 프로그램 참여 수기 공모전(KETFLIX) 개최 안내")
-   | 도현미 | 2021-12-22 | 228 |
-| 3381 |  [[장학] 2022학년도 한국지도자육성장학재단 신규장학생 선발 안내](?no=3656&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[장학] 2022학년도 한국지도자육성장학재단 신규장학생 선발 안내") | 임초록 | 2021-12-21 | 891 |
-| 3380 |  [[안내] 2021년 온라인 폭력예방교육 종료 안내](?no=3655&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[안내] 2021년 온라인 폭력예방교육 종료 안내") | 임초록 | 2021-12-21 | 711 |
-| 3379 |  [2021겨울학기 CSE 대학원 학부생 동계연구프로그램 안내](?no=3654&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "2021겨울학기 CSE 대학원 학부생 동계연구프로그램  안내")
-   | 공미화 | 2021-12-20 | 1,780 |
-| 3378 | [[코로나-19] 방역관리 협조 요청(21.12.18.기준)](?no=3653&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "<font color=red>[코로나-19] 방역관리 협조 요청(21.12.18.기준)</font color>") | 임초록 | 2021-12-17 | 1,216 |
-| 3377 |  [[모집] 한국장학재단 창업지원형 기숙사 2022년도 입주생 모집](?no=3652&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[모집] 한국장학재단 창업지원형 기숙사 2022년도 입주생 모집") | 방원길 | 2021-12-13 | 1,537 |
-| 3376 |  [[장학] 2022학년도 1학기 등록금 감면장학금 우선선발대상자 신청](?no=3651&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[장학] 2022학년도 1학기 등록금 감면장학금 우선선발대상자 신청")
-   | 임초록 | 2021-12-09 | 1,863 |
-| 3375 |  [[장학] 2022년도 협성장학생 선발 안내](?no=3650&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[장학] 2022년도 협성장학생 선발 안내")
-   | 임초록 | 2021-12-07 | 1,781 |
-| 3374 |  [2021학년도 학생의료공제회원 건강검진(내원검진) 안내](?no=3649&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "2021학년도 학생의료공제회원 건강검진(내원검진) 안내")
-   | 임초록 | 2021-12-06 | 1,678 |
-| 3373 |  [트위치 이용권 배포 안내](?no=3648&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "트위치 이용권 배포 안내") | 임초록 | 2021-12-06 | 1,777 |
-| 3372 |  [2022학년도 경북대 HuStar ICT 트랙 3기 교육생 모집 (9.27.~12.11.)](?no=3647&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "2022학년도 경북대 HuStar ICT 트랙 3기 교육생 모집 (9.27.~12.11.)") | 안정민 | 2021-12-06 | 1,284 |
-| 3371 |  [[교외] 개인형 이동수단(PM) 이용형태 설문조사 참여 및 홍보 협조 요청](?no=3646&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[교외] 개인형 이동수단(PM) 이용형태 설문조사 참여 및 홍보 협조 요청") | 임초록 | 2021-12-06 | 1,616 |
-| 3370 |  [[교외] 개인형 이동수단(PM) 이용행태 조사](?no=3645&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[교외] 개인형 이동수단(PM) 이용행태 조사") | 김문환 | 2021-12-06 | 837 |
-| 3369 | [[코로나-19] 방역관리 협조 요청(21.12.06.기준)](?no=3644&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "<font color=red>[코로나-19] 방역관리 협조 요청(21.12.06.기준)</font color>") | 임초록 | 2021-12-06 | 1,262 |
-| 3368 |  [[인재개발] 2022학년도 1학기 진로탐색수업 운영 안내](?no=3643&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[인재개발] 2022학년도 1학기 진로탐색수업 운영 안내") | 임초록 | 2021-12-03 | 2,848 |
-| 3367 |  [[교내]「2021 해외대학 공동 캡스톤디자인 프로그램」참여학생 모집 (재공고)](?no=3642&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[교내]「2021 해외대학 공동 캡스톤디자인 프로그램」참여학생 모집 (재공고)") | 임초록 | 2021-12-03 | 2,809 |
-| 3366 |  [2021학년도 2학기 대학원 완성 논문 제출안내](?no=3641&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "2021학년도 2학기 대학원 완성 논문 제출안내")
-   | 공미화 | 2021-12-03 | 1,943 |
-| 3365 |  [보컬데이터를 활용한 아이디어 해커톤 참가자 모집](?no=3640&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "보컬데이터를 활용한 아이디어 해커톤 참가자 모집")
-   | 이승희 | 2021-12-02 | 1,940 |
-| 3364 | [[코로나-19] 방역관리 협조 요청](?no=3639&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "<font color=red>[코로나-19] 방역관리 협조 요청</font color>") | 임초록 | 2021-12-02 | 1,910 |
-| 3363 |  [한국장학재단 창업 프로그램 설명회 참가자 모집](?no=3638&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "한국장학재단 창업 프로그램 설명회 참가자 모집") | 방원길 | 2021-12-01 | 2,508 |
-| 3362 |  [[장학] 2022학년도 1학기 국가장학금 1차 신청 안내](?no=3637&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[장학] 2022학년도 1학기 국가장학금 1차 신청 안내") | 임초록 | 2021-12-01 | 2,814 |
-| 3361 |  [[SW중심대학] 대학생 AI 프로그래밍 경진대회 수상자 명단](?no=3636&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[SW중심대학] 대학생 AI 프로그래밍 경진대회 수상자 명단")
-   | 이승희 | 2021-11-30 | 2,232 |
-| 3360 |  [21. 12. 6.(월) 2학기 글로벌SW역량강화 정기세미나「How to build a great ...](?no=3635&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "21. 12. 6.(월) 2학기 글로벌SW역량강화 정기세미나「How to build a great product」")
-     | 이은주 | 2021-11-30 | 1,956 |
-| 3359 |  [2021학년도 창업 성과발표회](?no=3634&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "2021학년도 창업 성과발표회") | 김문환 | 2021-11-30 | 1,091 |
-| 3358 |  [2021 SW인재페스티벌](?no=3633&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "2021 SW인재페스티벌") | 김은숙 | 2021-11-30 | 2,174 |
-| 3357 |  [2021년 공공기관 오픈캠퍼스 개최 및 참가신청 안내](?no=3632&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "2021년 공공기관 오픈캠퍼스 개최 및 참가신청 안내") | 방원길 | 2021-11-29 | 2,596 |
-| 3356 |  [21. 12. 2.(목) 2학기 글로벌SW역량강화 정기세미나「멀고도 먼 창업의 길, 하지만 희망이 ...](?no=3631&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "21. 12. 2.(목) 2학기 글로벌SW역량강화 정기세미나「멀고도 먼 창업의 길, 하지만 희망이 보인다」")
-     | 이은주 | 2021-11-26 | 2,040 |
-| 3355 |  [~12/15] 2022학년도 1학기 학·석사 및 학·석박사통합연계과정 이수예정자 선발 신청 안내](?no=3630&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "~12/15] 2022학년도 1학기 학·석사 및 학·석박사통합연계과정 이수예정자 선발 신청 안내")
-   | 공미화 | 2021-11-22 | 2,538 |
-| 3354 |  [[인권센터] 김원영 변호사와 함께하는 인권토크콘서트](?no=3629&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[인권센터] 김원영 변호사와 함께하는 인권토크콘서트") | 임초록 | 2021-11-19 | 2,134 |
-| 3353 |  [2021학년도 동계 해외프로그램 모집 안내(AEP, 산호세 주립대학)](?no=3628&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "2021학년도 동계 해외프로그램 모집 안내(AEP, 산호세 주립대학)")
-   | 이은주 | 2021-11-18 | 2,313 |
-| 3352 |  [21. 11. 25.(목) 2학기 글로벌SW역량강화 정기세미나「디지털 전환과 스마트팜 기술」](?no=3627&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "21. 11. 25.(목) 2학기 글로벌SW역량강화 정기세미나「디지털 전환과 스마트팜 기술」") | 이은주 | 2021-11-18 | 1,364 |
-| 3351 |  [2022 해외 명문대학 썸머스쿨 추진 안내](?no=3626&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "2022 해외 명문대학 썸머스쿨 추진 안내")
-   | 도현미 | 2021-11-16 | 985 |
-| 3350 |  [제15회 [다시 듣고 싶은 수업] 에세이 공모전 개최 안내](?no=3625&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "제15회 [다시 듣고 싶은 수업] 에세이 공모전 개최 안내")
-   | 도현미 | 2021-11-16 | 889 |
-| 3349 |  [[교내] K-Digital Training ‘빅데이터 분석가 양성과정’ 교육생 모집](?no=3624&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25 "[교내] K-Digital Training ‘빅데이터 분석가 양성과정’ 교육생 모집") | 임초록 | 2021-11-16 | 1,283 |
-
-
-
-
-[**](?page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25)
-[1](?page=1&key=&keyfield=&category=&bbs_code=Site_BBS_25) 
-[2](?page=2&key=&keyfield=&category=&bbs_code=Site_BBS_25) 
-[3](?page=3&key=&keyfield=&category=&bbs_code=Site_BBS_25) 
-[4](?page=4&key=&keyfield=&category=&bbs_code=Site_BBS_25) 
-[**](?page=5&key=&keyfield=&category=&bbs_code=Site_BBS_25)
-[**](?page=68&key=&keyfield=&category=&bbs_code=Site_BBS_25)
-
-
-
-
-제목
 작성자
-내용
+김은숙
 
 
-**
+작성일
+2022-01-17 10:27
+
+
+조회수
+127
+
+
+
+
+﻿﻿﻿﻿※자세한 내용은 소프트웨어교육원 홈페이지 참조. **☞** [**대경권 SW중심대학 간 학점교류 참여학생 모집**](https://swedu.knu.ac.kr/05_sub/01_sub.html?no=236&bbs_cmd=view&page=1&key=&keyfield=&category=&bbs_code=Site_BBS_1#contents)![](/_files/userfile/image20220117102506_jooep.jpg)
+
+  
+
+
+
+
+
+
+
+
+[목록](?key=&keyfield=&category=&page=1&bbs_code=Site_BBS_25)
+[이전글](?bbs_cmd=view&page=1&key=&keyfield=&category=&no=3675&bbs_code=Site_BBS_25)
+[다음글](?bbs_cmd=view&page=1&key=&keyfield=&category=&no=3678&bbs_code=Site_BBS_25)
+
+
+
 
 
 
@@ -856,11 +776,6 @@ function closeWin(){
 
 경북대학교 IT대학 컴퓨터학부  
 
-우)41566 대구광역시 북구 대학로 80 / IT대학 융복합관 317호(건물번호 : 415)  
-
-TEL. 053-950-5550/6370   FAX. 053-957-4846   E-mail. scse@knu.ac.kr  
-
- Copyright 2019 KNU CSE All rights reserved
 
 
 
