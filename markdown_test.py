@@ -10,7 +10,7 @@ soup = BeautifulSoup(res.text, 'html.parser')
 # soup.
 # h = markdownify.markdownify(soup.currentTag, heading_style="ATX")
 h = markdownify.markdownify(res.text, heading_style="ATX")
-h.replace('_files/userfile/image', 'http://cse.knu.ac.kr/_files/userfile/image')
+h = h.replace('/_files/userfile/image', 'http://cse.knu.ac.kr/_files/userfile/image')
 with open('./markdown_test.md', 'w') as f:
   f.write(h)
 print(h)
