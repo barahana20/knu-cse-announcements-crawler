@@ -1,1 +1,1 @@
-﻿﻿![test_image](test_image.jpeg)
+﻿﻿![test_image](test_image.jpg)
