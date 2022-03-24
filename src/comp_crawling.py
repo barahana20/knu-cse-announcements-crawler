@@ -33,11 +33,11 @@ if __name__ == '__main__':
                 if(str(tr_box).find('font')!=-1):
                     tr_title = tr_box.find('font').text
                 else:
-                    tr_title = tr_box.find('a')['title']
+                    tr_title = tr_box.find('a', {}).text
                 tr_href = 'https://computer.knu.ac.kr/06_sub/02_sub.html'+tr_box.find('a')['href']
                 tr_writer = tr_box.find('td', attrs={'class':'bbs_writer'}).text
                 tr_date = tr_box.find('td', attrs={'class':'bbs_date'}).text.replace('-', '')
-                markdown_test.aa(tr_href, tr_bbs_num, tr_title, tr_date)
+                markdown_test.aa(tr_href, tr_bbs_num, tr_date)
                 print(tr_bbs_num)
                 print(tr_href)
                 print(tr_title)

@@ -3,10 +3,12 @@ from bs4 import BeautifulSoup
 import os
 import markdownify
 
-def aa(tr_href, tr_bbs_num, tr_title, tr_date):
+def aa(tr_href, tr_bbs_num, tr_date):
   
   res = requests.get(tr_href)
   soup = BeautifulSoup(res.text, 'html.parser') 
+  tr_title = soup.find('div', attrs={'class':'kboard-title'}).text
+  tr_title = tr_title.replace('  ', ' ')
   # soup.
   # h = markdownify.markdownify(soup.currentTag, heading_style="ATX")
   h = markdownify.markdownify(res.text, heading_style="ATX")
@@ -17,8 +19,8 @@ def aa(tr_href, tr_bbs_num, tr_title, tr_date):
   h = h.replace('?key', comp_link+'?key')
   h = h.replace('?bbs_cmd', comp_link+'?bbs_cmd')
   with open(f'./storage/{str(tr_bbs_num)}_{tr_date}.md', 'w') as f:
-    print(h[h.index(tr_title):h.index("$(document).on('ready',function () {")])
-    # f.write(h[h.index(tr_title):h.index("$(document).on('ready',function () {")])
+      # print(h[h.index(tr_title):h.index("$(document).on('ready',function () {")])
+    f.write(h[h.index(tr_title):h.index("$(document).on('ready',function () {")])
     
     # f.write(h)
   # print(h)
