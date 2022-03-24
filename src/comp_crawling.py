@@ -43,4 +43,3 @@ if __name__ == '__main__':
                 print(tr_title)
                 print(tr_writer)
                 print(tr_date)
-                exit(1)
