@@ -16,6 +16,7 @@ def aa(tr_href, tr_bbs_num, tr_date):
   h = h.replace('/_files/userfile/image', 'https://computer.knu.ac.kr/_files/userfile/image')
   comp_link = 'https://computer.knu.ac.kr/06_sub/02_sub.html'
   h = h.replace('/pack/bbs/down.php', 'https://computer.knu.ac.kr/pack/bbs/down.php')
+  h_file = h[h.index('https://computer.knu.ac.kr/pack/bbs/down.php'):]
   h = h.replace('?key', comp_link+'?key')
   h = h.replace('?bbs_cmd', comp_link+'?bbs_cmd')
   with open(f'./storage/{str(tr_bbs_num)}_{tr_date}.md', 'w') as f:
