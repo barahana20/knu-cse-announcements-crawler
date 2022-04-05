@@ -38,8 +38,8 @@ if __name__ == '__main__':
                 tr_writer = tr_box.find('td', attrs={'class':'bbs_writer'}).text
                 tr_date = tr_box.find('td', attrs={'class':'bbs_date'}).text.replace('-', '')
                 markdown.aa(tr_href, tr_bbs_num, tr_date)
-                print(tr_bbs_num)
-                print(tr_href)
-                print(tr_title)
-                print(tr_writer)
-                print(tr_date)
+                # print(tr_bbs_num)
+                # print(tr_href)
+                # print(tr_title)
+                # print(tr_writer)
+                # print(tr_date)
