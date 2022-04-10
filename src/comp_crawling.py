@@ -85,7 +85,6 @@ def make_md(link, filename, storage_path, mile_path):
 일반 공지만 뽑은 다음
 공지에서 원하는 정보만 추출
 '''
-
 """
 storage 디렉토리를 만들고
 "번호.올라온날짜"으로 각 공지사항 폴더을 만들어서
