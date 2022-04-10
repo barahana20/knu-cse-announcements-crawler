@@ -1,12 +1,13 @@
-import requests
-from bs4 import BeautifulSoup
 import os
 from collections import namedtuple
+import requests
+from bs4 import BeautifulSoup
 import markdownify
-import re
+from functional import seq
 
 comp_notice_url = "https://computer.knu.ac.kr/06_sub/02_sub.html?page={}&key=&keyfield=&category=&bbs_code=Site_BBS_25"
-
+storage_path = './storage'
+mile_path = './mile'
 NoticeInfo = namedtuple('NoticeInfo', 'id link date')
 
 def createDir(directory):
@@ -40,14 +41,9 @@ def get_info_from_notice(notice):
     writer = notice.find('td', attrs={'class':'bbs_writer'}).text
     '''
     id = notice.find('td', attrs={'class': 'bbs_num'}).text
-    link = 'https://computer.knu.ac.kr/06_sub/02_sub.html' + \
-        notice.find('a')['href']
+    link = 'https://computer.knu.ac.kr/06_sub/02_sub.html' + notice.find('a')['href']
     date = notice.find('td', attrs={'class': 'bbs_date'}).text.replace('-', '')
     return NoticeInfo(id, link, date)
-
-def into_link_and_filename(notice_info):
-    id, link, date = notice_info
-    return link, f'{id}_{date}.md'
 
 def make_md(link, filename, storage_path, mile_path):
     comp_link = 'https://computer.knu.ac.kr/06_sub/02_sub.html'
@@ -56,7 +52,6 @@ def make_md(link, filename, storage_path, mile_path):
     res = requests.get(link)
     soup = BeautifulSoup(res.text, 'html.parser')
     elem = soup.find('div', attrs={'id': 'kboard-document'})
-
     document = str(markdownify.markdownify(str(elem), heading_style="ATX"))
 
     document = (document
@@ -66,12 +61,10 @@ def make_md(link, filename, storage_path, mile_path):
                 .replace('?bbs_cmd', comp_link+'?bbs_cmd')
                 .replace(']첨부파일', ']  \n\n첨부파일') # 첨부파일 줄바꿈
                )
-    
-    if comp_down_link in document:
-        c = re.compile(comp_down_link+r'.+Site_BBS_25')
-        a = re.findall(c, document)  # 파일 다운로드 링크를 정규표현식으로 가져옴
-        for a1 in a:
-            document = document.replace(a1, a1.replace(' ', ''))  # 파일명 공백 제거
+
+    for attachment in soup.find_all('div', attrs={'class':'kboard-attach'}):
+        file_link = attachment.find('a')['href']
+        document = document.replace(file_link, file_link.replace(' ', ''))
 
     with open(os.path.join(storage_path, filename), 'w', encoding='utf-8') as f:
         f.write(document)
@@ -81,21 +74,41 @@ def make_md(link, filename, storage_path, mile_path):
             f.write(document)
 
 '''
-공지들을 뽑아서
-일반 공지만 뽑은 다음
-공지에서 원하는 정보만 추출
-'''
-"""
+함수형으로 코드를 짤려고 노력
+    예시:
+        공지들을 뽑아서
+        일반 공지만 뽑은 다음
+        공지에서 원하는 정보만 추출
+        정보를 토대로 마크다운 문서 저장
+    원칙:
+        1. 하나의 함수는 하나의 역할만
+        2. 함수는 side-effect 없이
+        3. 타입은 일관되게
+        4. 작명은 개념 중심, 주석은 기술 중심
+        5. 더 간단하게 코드를 만들고 중복을 삭제하기
+
 storage 디렉토리를 만들고
 "번호.올라온날짜"으로 각 공지사항 폴더을 만들어서
 마크다운으로 변환하여 저장
-"""
+'''
 if __name__ == '__main__':
-    createDir('./storage')
-    createDir('./mile')
-    
+    createDir(storage_path)
+    createDir(mile_path)
+
+    is_not_announcement = lambda notice: not is_announcement(notice)
+    make_md_by_info = lambda info: make_md(info.link, f'{info.id}_{info.date}.md', storage_path, mile_path)
+
+    notices = get_cse_notices(comp_notice_url.format('1'))
+    (seq(notices)
+        .filter(is_not_announcement)
+        .map(get_info_from_notice)
+        .for_each(make_md_by_info)
+    )
+
+    '''
     for notice in get_cse_notices(comp_notice_url.format(1)):
         if(is_announcement(notice)):
             continue
         id, link, date = get_info_from_notice(notice)
-        make_md(link, f'{id}_{date}.md', './storage', './mile')
+        make_md(link, f'{id}_{date}.md', storage_path, mile_path)
+    '''
