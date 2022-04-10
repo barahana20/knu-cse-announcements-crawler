@@ -17,7 +17,7 @@
 
 
 조회수
-338
+335
 
 
 
@@ -51,8 +51,8 @@
 
 
 
-[목록](https://computer.knu.ac.kr/06_sub/02_sub.html?key=&keyfield=&category=&page=1&bbs_code=Site_BBS_25)
-[이전글](https://computer.knu.ac.kr/06_sub/02_sub.html?bbs_cmd=view&page=1&key=&keyfield=&category=&no=3738&bbs_code=Site_BBS_25)
+[목록](?key=&keyfield=&category=&page=1&bbs_code=Site_BBS_25)
+[이전글](?bbs_cmd=view&page=1&key=&keyfield=&category=&no=3738&bbs_code=Site_BBS_25)
 [다음글](javascript:alert('No post.'))
 
 

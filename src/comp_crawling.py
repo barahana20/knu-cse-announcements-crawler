@@ -39,7 +39,6 @@ def get_info_from_notice(notice):
         title = notice.find('a', {}).text
     writer = notice.find('td', attrs={'class':'bbs_writer'}).text
     '''
-    
     id = notice.find('td', attrs={'class':'bbs_num'}).text
     link = 'https://computer.knu.ac.kr/06_sub/02_sub.html' + notice.find('a')['href']
     date = notice.find('td', attrs={'class':'bbs_date'}).text.replace('-', '')
@@ -47,22 +46,13 @@ def get_info_from_notice(notice):
     
 def make_md(link, save_path):    
     res = requests.get(link)
-    script_remove_compile = re.compile(r"s/<script.*<\/script>//g;/<script/,/<\/script>/{/<script/!{/<\/script>/!d}};s/<script.*//g;s/.*<\/script>//g\")
-    print(re.findall(script_remove_compile, res.text))
-    exit(1)
-    soup = BeautifulSoup(res.text, 'html.parser') 
-    title = soup.find('div', attrs={'class':'kboard-title'}).text
-    title = title.replace('  ', ' ')
+    soup = BeautifulSoup(res.text, 'html.parser')
+    document = soup.find('div', attrs={'id':'kboard-document'})
     comp_link = 'https://computer.knu.ac.kr/06_sub/02_sub.html'
     comp_down_link = "https://computer.knu.ac.kr/pack/bbs/down.php"
-    h = markdownify.markdownify(res.text, heading_style="ATX")
+    h = markdownify.markdownify(str(document), heading_style="ATX")
     h = str(h)
-    '''
-    r"s/<script.*<\\/script>//g;/<script/,/<\\/script>/{/<script/!{/<\\/script>/!d}};s/<script.*//g;s/.*<\\/script>//g\"
-    '''
-    with open('./test.md', 'w', encoding='utf-8') as f:
-        f.write(h)
-    exit(1)
+
     if(h.find('마일리지')!=-1):
         print(id, '찾음')
     h = h.replace('/_files/userfile/image', 'https://computer.knu.ac.kr/_files/userfile/image')
@@ -71,7 +61,6 @@ def make_md(link, save_path):
 
     h = h.replace('?key', comp_link+'?key')
     h = h.replace('?bbs_cmd', comp_link+'?bbs_cmd')
-    h = h[h.index(title):h.index("$(document).on('ready',function () {")]
     if(h.find(comp_down_link)!=-1):
         c = re.compile(comp_down_link+r'.+Site_BBS_25')
         a = re.findall(c, h) # 파일 다운로드 링크를 정규표현식으로 가져옴
@@ -101,4 +90,4 @@ if __name__ == '__main__':
         if(is_announcement(notice)):
             continue
         id, link, date = get_info_from_notice(notice)
-        make_md(link, './storage/{id}_{date}.md')
+        make_md(link, f'./storage/{id}_{date}.md')
