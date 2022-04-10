@@ -19,7 +19,6 @@ food_cost_sum = seq(transactions)\
   .map(lambda x: x.amount).for_each(lambda x: print(x))
   
 sumup = seq(["123", "456", "789"]).reduce(lambda s, e: int(s) + int(e), 100)
-list().count()
 '''
 s, e -> "s e"
 
