@@ -30,11 +30,9 @@ def aa(tr_href, tr_bbs_num, tr_date):
     for a1 in a:
       # print(a1)
       pass
-    exit(1)
-  exit(1)
-  # with open(f'./storage/{str(tr_bbs_num)}_{tr_date}.md', 'w') as f:
-      # 
+  with open(f'./storage/{str(tr_bbs_num)}_{tr_date}.md', 'w', encoding='utf-8') as f:
+      
     # f.write(h[h.index(tr_title):h.index("$(document).on('ready',function () {")])
     
-    # f.write(h)
+    f.write(h)
   # print(h)
