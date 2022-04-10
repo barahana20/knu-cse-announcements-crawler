@@ -25,6 +25,6 @@ def aa(tr_href, tr_bbs_num, tr_date):
     a = re.findall(c, h)
     for a1 in a:
       h = h.replace(a1, a1.replace(' ', ''))
-    h = h.replace(']첨부파일', ']  첨부파일')
+    h = h.replace(']첨부파일', ']  \n\n첨부파일')
   with open(f'./storage/{str(tr_bbs_num)}_{tr_date}.md', 'w', encoding='utf-8') as f:
     f.write(h)
