@@ -26,10 +26,10 @@ def aa(tr_href, tr_bbs_num, tr_date):
   if(h.find(comp_down_link)!=-1):
     c = re.compile(comp_down_link+r'.+Site_BBS_25')
     a = re.findall(c, h)
-    print(a)
+    
     for a1 in a:
-      # print(a1)
-      pass
+      h = h.replace(a1, a1.replace(' ', ''))
+    print(h)
   with open(f'./storage/{str(tr_bbs_num)}_{tr_date}.md', 'w', encoding='utf-8') as f:
       
     # f.write(h[h.index(tr_title):h.index("$(document).on('ready',function () {")])
