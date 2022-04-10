@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import os
-import markdown
+import markdown_func
 
 URL = "https://computer.knu.ac.kr/06_sub/02_sub.html?page=%s&key=&keyfield=&category=&bbs_code=Site_BBS_25"
 
@@ -37,7 +37,7 @@ if __name__ == '__main__':
                 tr_href = 'https://computer.knu.ac.kr/06_sub/02_sub.html'+tr_box.find('a')['href']
                 tr_writer = tr_box.find('td', attrs={'class':'bbs_writer'}).text
                 tr_date = tr_box.find('td', attrs={'class':'bbs_date'}).text.replace('-', '')
-                markdown.aa(tr_href, tr_bbs_num, tr_date)
+                markdown_func.aa(tr_href, tr_bbs_num, tr_date)
                 # print(tr_bbs_num)
                 # print(tr_href)
                 # print(tr_title)
