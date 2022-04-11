@@ -11,7 +11,7 @@ timestamp = (soup
     .find('div', attrs={'class':'detail-attr detail-date'})
     .find('div', attrs={'class':'detail-value'}).text
     )
-timestamp = dt.timestamp.strptime(timestamp, "%Y-%m-%d %H:%M")
+timestamp = dt.datetime.strptime(timestamp, "%Y-%m-%d %H:%M")
 print(timestamp.date())
 print(timestamp.day)
 print(timestamp.year)
