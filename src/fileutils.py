@@ -19,5 +19,9 @@ def to_allowed_filename(string):
 def write_to_file(path, str):
     with open(os.path.join(path), 'w', encoding='utf-8') as f:
         f.write(str)
-  
+
+def write_into(directory):
+    def wrapper(path, str):
+        write_to_file(os.path.join(directory, path), str)
+    return wrapper
   

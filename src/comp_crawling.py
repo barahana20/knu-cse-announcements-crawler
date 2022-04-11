@@ -3,7 +3,7 @@ import re as regex
 from collections import namedtuple
 import requests
 from bs4 import BeautifulSoup
-import markdownify
+from markdownify import markdownify
 from functional import seq
 from fileutils import *
 from datetime import datetime
@@ -18,7 +18,7 @@ def get_cse_notices(comp_notice_url):
     res = requests.get(comp_notice_url)
     soup = BeautifulSoup(res.text, 'html.parser')
     notices = soup.find_all('tr')  # 일반 공지사항 목록 가져옴
-    
+
     return notices
 
 def is_announcement(notice):
@@ -57,32 +57,29 @@ def get_info_from_notice(notice):
     
     return NoticeInfo(link, id, title, timestamp, source)
 
-def make_md(source, filename, storage_path, mile_path):
+def into_filename(notice):
+    _, id, title, timestamp, _ = notice
+    timestamp = timestamp.strftime("%Y-%m-%dT%H-%M")
+    return to_allowed_filename(f'{id}_{title}_{timestamp}.md')
+
+def make_md(source):
     comp_link = 'https://computer.knu.ac.kr/06_sub/02_sub.html'
     comp_down_link = "https://computer.knu.ac.kr/pack/bbs/down.php"
-
-    document = (str(source)
+    
+    document = str(markdownify(str(source), heading_style="ATX"))
+    document = (document
                 .replace('/_files/userfile/image', 'https://computer.knu.ac.kr/_files/userfile/image')
                 .replace('/pack/bbs/down.php', comp_down_link)
                 .replace('?key', comp_link+'?key')
                 .replace('?bbs_cmd', comp_link+'?bbs_cmd')
                 .replace(']첨부파일', ']  \n\n첨부파일') # 첨부파일 줄바꿈
                )
-    """
-    href="/pack/bbs/down.php?f_name=Q0dUVllEWVdbVHZLcRUQblNAQw==&o_name=2022년 GKS 외국인 우수 자비 장학생 모집 공고(안내용).pdf&tbl=Site_BBS_25"
-    """
-    for match in regex.finditer(r'o_name=.+?"', document):
+
+    for match in regex.finditer(r'o_name=.+?&', document):
         start, end = match.start(), match.end()
         document = document[:start] + document[start:end].replace(' ', '') + document[end:]
 
     return document
-    
-    with open(os.path.join(storage_path, filename), 'w', encoding='utf-8') as f:
-        f.write(document)
-
-    if '마일리지' in document:
-        with open(os.path.join(mile_path, filename), 'w', encoding='utf-8') as f:
-            f.write(document)
 
 '''
 함수형으로 코드를 짤려고 노력
@@ -108,21 +105,17 @@ if __name__ == '__main__':
     createDir(storage_path)
     createDir(mile_path)
 
-    is_not_announcement = lambda notice: not is_announcement(notice)
-    make_md_by_info = lambda info: make_md(info.source, f'{info.id}_{to_allowed_filename(info.title)}_{info.timestamp.strftime("%Y-%m-%dT%H:%M")}.md', storage_path, mile_path)
+    info_to_filename_and_makrdown = lambda info: (into_filename(info), make_md(info.source))
+    write_to_storage = lambda filename_and_document: write_into(storage_path)(*filename_and_document)
 
     notices = get_cse_notices(comp_notice_url.format('1'))
-    first3 = (seq(notices)
-        .filter(is_not_announcement)
+    (seq(notices)
+        .filter_not(is_announcement)
         .map(get_info_from_notice)
-        .map(make_md_by_info)
-        .take(3)
-         #.to_list()
+        .map(info_to_filename_and_makrdown)
+        .for_each(write_to_storage)
     )
     
-    for i, f in enumerate(first3):
-        write_to_file(f'example{i}.md', f)
-
     '''
     for notice in get_cse_notices(comp_notice_url.format(1)):
         if(is_announcement(notice)):
