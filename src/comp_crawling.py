@@ -4,18 +4,12 @@ import requests
 from bs4 import BeautifulSoup
 import markdownify
 from functional import seq
+from fileutils import createDir
 
 comp_notice_url = "https://computer.knu.ac.kr/06_sub/02_sub.html?page={}&key=&keyfield=&category=&bbs_code=Site_BBS_25"
 storage_path = './storage'
 mile_path = './mile'
-NoticeInfo = namedtuple('NoticeInfo', 'id link date')
-
-def createDir(directory):
-    try:
-        os.makedirs(directory, exist_ok=True)
-    except OSError:
-        print('Error: Creating directory. ' + directory)
-        exit(1)
+NoticeInfo = namedtuple('NoticeInfo', 'id link datetime')
 
 def get_cse_notices(comp_notice_url):
     res = requests.get(comp_notice_url)
@@ -96,7 +90,7 @@ if __name__ == '__main__':
     createDir(mile_path)
 
     is_not_announcement = lambda notice: not is_announcement(notice)
-    make_md_by_info = lambda info: make_md(info.link, f'{info.id}_{info.date}.md', storage_path, mile_path)
+    make_md_by_info = lambda info: make_md(info.link, f'{info.id}_{info.datetime}.md', storage_path, mile_path)
 
     notices = get_cse_notices(comp_notice_url.format('1'))
     (seq(notices)
