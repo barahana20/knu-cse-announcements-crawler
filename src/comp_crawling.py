@@ -5,11 +5,11 @@ from bs4 import BeautifulSoup
 import markdownify
 from functional import seq
 from fileutils import createDir
-
+import datetime as dt
 comp_notice_url = "https://computer.knu.ac.kr/06_sub/02_sub.html?page={}&key=&keyfield=&category=&bbs_code=Site_BBS_25"
 storage_path = './storage'
 mile_path = './mile'
-NoticeInfo = namedtuple('NoticeInfo', 'id link datetime')
+NoticeInfo = namedtuple('NoticeInfo', 'id link timestamp')
 
 def get_cse_notices(comp_notice_url):
     res = requests.get(comp_notice_url)
@@ -36,8 +36,12 @@ def get_info_from_notice(notice):
     '''
     id = notice.find('td', attrs={'class': 'bbs_num'}).text
     link = 'https://computer.knu.ac.kr/06_sub/02_sub.html' + notice.find('a')['href']
-    date = notice.find('td', attrs={'class': 'bbs_date'}).text.replace('-', '')
-    return NoticeInfo(id, link, date)
+    timestamp = (notice
+        .find('div', attrs={'class':'detail-attr detail-date'})
+        .find('div', attrs={'class':'detail-value'}).text
+    )
+    timestamp = dt.timestamp.strptime(timestamp, "%Y-%m-%d %H:%M")
+    return NoticeInfo(id, link, timestamp)
 
 def make_md(link, filename, storage_path, mile_path):
     comp_link = 'https://computer.knu.ac.kr/06_sub/02_sub.html'
@@ -81,16 +85,17 @@ def make_md(link, filename, storage_path, mile_path):
         4. 작명은 개념 중심, 주석은 기술 중심
         5. 더 간단하게 코드를 만들고 중복을 삭제하기
 
-storage 디렉토리를 만들고
-"번호.올라온날짜"으로 각 공지사항 폴더을 만들어서
+storage/년/월 디렉토리를 만들고
+"번호_%Y-%m-%dT%H:%M"으로 각 공지사항 파일을 만들어서
 마크다운으로 변환하여 저장
+갱신할 때는 해당 월 디렉토리 안에서 가장 최신(년월일이 가장 높은 파일)인 파일을 찾음
 '''
 if __name__ == '__main__':
     createDir(storage_path)
     createDir(mile_path)
 
     is_not_announcement = lambda notice: not is_announcement(notice)
-    make_md_by_info = lambda info: make_md(info.link, f'{info.id}_{info.datetime}.md', storage_path, mile_path)
+    make_md_by_info = lambda info: make_md(info.link, f'{info.id}_{info.timestamp}.md', storage_path, mile_path)
 
     notices = get_cse_notices(comp_notice_url.format('1'))
     (seq(notices)
