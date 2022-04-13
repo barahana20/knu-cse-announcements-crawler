@@ -9,7 +9,7 @@ def createDir(directory):
         exit(1)
 
 def write_to_file(path, str):
-    replace_easy_visually = lambda x: x.replace('\n\n\n\n', '\n\n').replace('\n\n\n\n\n', '\n\n')
+
     with open(join(path), 'w', encoding='utf-8') as f:
         f.write(str)
 
