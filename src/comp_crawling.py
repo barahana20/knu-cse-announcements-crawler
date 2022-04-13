@@ -25,6 +25,7 @@ storage/년/월 디렉토리를 만들고
 
 from notice import Notice, NoticeFactory
 from fileutils import write_into, subfiles, createDir
+from filename_policy import NoticeInfo, notice_to_filename, filename_to_notice_info
 
 if __name__ == '__main__':
     pass

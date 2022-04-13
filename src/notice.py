@@ -1,5 +1,3 @@
-from typing import Optional
-from typing_extensions import assert_never
 from lazy_property import LazyProperty
 
 from datetime import datetime
@@ -9,7 +7,6 @@ import json
 import requests
 from urllib.parse import urlparse, parse_qs
 from bs4 import BeautifulSoup, Tag
-from bs4.element import Tag as Element
 from markdownify import markdownify
 
 
