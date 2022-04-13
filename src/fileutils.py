@@ -9,13 +9,9 @@ def createDir(directory):
         exit(1)
 
 def write_to_file(path, str):
-    replace_easy_visually = lambda x: x.replace('\n\n\n\n', '\n\n').replace('\n\n\n\n\n', '\n\n')
+
     with open(join(path), 'w', encoding='utf-8') as f:
-<<<<<<< HEAD
-        f.write(replace_easy_visually(str))
-=======
         f.write(str)
->>>>>>> cb970c7e5202a2339ccead7379cfd409714191e7
 
 def write_into(directory):
     def wrapper(path, str):

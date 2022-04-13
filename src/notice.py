@@ -1,5 +1,3 @@
-from typing import Optional
-from typing_extensions import assert_never
 from lazy_property import LazyProperty
 
 from datetime import datetime
