@@ -60,7 +60,7 @@ def get_info_from_notice(notice):
 def into_filename(notice):
     _, id, title, timestamp, _ = notice
     timestamp = timestamp.strftime("%Y-%m-%dT%H-%M")
-    return to_allowed_filename(f'{id}_{title}_{timestamp}.md')
+    return to_allowed_filename(f'{id}_{title}_{timestamp}')+'.md'
 
 def make_md(source):
     comp_link = 'https://computer.knu.ac.kr/06_sub/02_sub.html'
