@@ -6,8 +6,9 @@ def find_recent(file_name, new_timestamp):
     new_timestamp = datetime.strptime(new_timestamp, "%Y-%m-%dT%H-%M")
 
     if timestamp < new_timestamp:
-        print('새로 가져온 파일이 더 최신입니다.')
+        return True
     else:
-        return
+        return False
 
-find_recent(r'{info.id}_{info.title}_2022-04-07T01-22.md', '2023-04-07T01-22')
+if find_recent(r'{info.id}_{info.title}_2022-04-07T01-22.md', '2023-04-07T01-22'):
+    print('새로 가져온 파일이 더 최신입니다.')
