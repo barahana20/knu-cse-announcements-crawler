@@ -1,4 +1,8 @@
-from distutils.debug import DEBUG
+"""
+컴퓨터학부 공지사항 1페이지에 있는 모든 페이지를 조회 및 저장 후,
+새로 올라온 공지사항이 있으면 이메일로 발송함.
+"""
+
 import os
 import re as regex
 from collections import namedtuple
@@ -7,14 +11,15 @@ from bs4 import BeautifulSoup
 from markdownify import markdownify
 from functional import seq
 from fileutils import *
-from datetime import datetime
-
-DEBUG_MODE = 1
+from send_email import send_email
+import datetime
+from glob import glob
+email_list = ['barahana123@kakao.com']
 
 comp_notice_url = "https://computer.knu.ac.kr/06_sub/02_sub.html?page={}&key=&keyfield=&category=&bbs_code=Site_BBS_25"
-storage_path = './storage'
 mile_path = './mile'
-storage_path = './markdown'
+md_path = './markdown'
+body_path = './body'
 NoticeInfo = namedtuple('NoticeInfo', 'link id title timestamp body source')
 
 def get_cse_notices(comp_notice_url):
@@ -58,7 +63,7 @@ def get_info_from_notice(notice):
         .find('div', attrs={'class':'detail-attr detail-date'})
         .find('div', attrs={'class':'detail-value'}).text
     )
-    timestamp = datetime.strptime(timestamp, "%Y-%m-%d %H:%M")
+    timestamp = datetime.datetime.strptime(timestamp, "%Y-%m-%d %H:%M")
     
     return NoticeInfo(link, id, title, timestamp, body, source)
 
@@ -85,6 +90,14 @@ def make_md(source):
         document = document[:start] + document[start:end].replace(' ', '') + document[end:]
 
     return document
+def get_recent_timestamp(path):
+    datas = glob(path+'/*')
+    timestamp = []
+    for data in datas:
+        name = os.path.basename(data)
+        
+        timestamp.append(datetime.datetime.strptime(name[name.rfind('_')+1:name.index('.md')], "%Y-%m-%dT%H-%M"))
+    return sorted(timestamp, reverse=True)[0]
 '''
 함수형으로 코드를 짤려고 노력
     예시:
@@ -119,39 +132,23 @@ storage/년/월 디렉토리를 만들고
 2. 모든 올라오는 공지사항을 저장후 최근 1주일 간의 데이터들과 마일리지 정보들을 카카오톡 챗봇에게 요청하면 그것들을 출력함.
 """
 if __name__ == '__main__':
-    createDir(storage_path)
     createDir(mile_path)
-    create(body_path)
+    createDir(body_path)
     
-    get_timestamp_from_filename = lambda name: (
-        datetime.strptime(
-            name[name.rfind('_')+1:name.index('.md')], "%Y-%m-%dT%H-%M")
-    )
-    is_in_a_week = lambda timestamp: timestamp > 
+    today = datetime.datetime.today()
+    is_in_a_week = lambda today: today > today - datetime.timedelta(weeks=1)
 
-    recent_timestamp = (seq(subfiles(storage_path))
-        .map(get_timestamp_from_filename)
-        .sorted(reverse=True)
-        .first()
-    )
+    recent_timestamp = get_recent_timestamp(md_path)
         
     is_newer_than_recent = lambda info: info.timestamp > recent_timestamp
     info_to_filename_and_makrdown = lambda info: (filename_from_info(info), make_md(info.source))
-    write_to_storage = lambda filename_and_document: write_into(storage_path)(*filename_and_document)
+    write_to_storage = lambda filename_and_document: write_into(md_path)(*filename_and_document)
 
     notices = get_cse_notices(comp_notice_url.format('1'))
-    (seq(notices)
-        .filter_not(is_announcement)
-        .map(get_info_from_notice)
-        .filter(is_newer_than_recent)
-        #.map(info_to_filename_and_makrdown)
-        .for_each(lambda info: print(info.id))
-    )
-    
-    '''
-    for notice in get_cse_notices(comp_notice_url.format(1)):
-        if(is_announcement(notice)):
-            continue
-        id, link, date = get_info_from_notice(notice)
-        make_md(link, f'{id}_{date}.md', storage_path, mile_path)
-    '''
+    for notice in notices:
+        if not is_announcement(notice):
+            noticeinfo = get_info_from_notice(notice)
+            write_to_storage(info_to_filename_and_makrdown(noticeinfo))
+            if is_newer_than_recent(noticeinfo):
+                for email in email_list:
+                    send_email(noticeinfo.title, noticeinfo.body, email)
