@@ -14,7 +14,7 @@ from fileutils import *
 from send_email import send_email
 import datetime
 from glob import glob
-email_list = ['barahana123@kakao.com', 'save@kakao.com']
+email_list = ['barahana123@kakao.com', 'save@kakao.com', 'insikwon@naver.com']
 
 comp_notice_url = "https://computer.knu.ac.kr/06_sub/02_sub.html?page={}&key=&keyfield=&category=&bbs_code=Site_BBS_25"
 mile_path = './mile'
