@@ -17,9 +17,7 @@ from glob import glob
 email_list = ['barahana123@kakao.com', 'save@kakao.com', 'insikwon@naver.com']
 
 comp_notice_url = "https://computer.knu.ac.kr/06_sub/02_sub.html?page={}&key=&keyfield=&category=&bbs_code=Site_BBS_25"
-mile_path = './mile'
-md_path = './markdown'
-body_path = './body'
+md_path = '/home/barahana123/knu-cse-announcements-crawler/markdown'
 NoticeInfo = namedtuple('NoticeInfo', 'link id title timestamp body source')
 
 def get_cse_notices(comp_notice_url):
@@ -132,9 +130,7 @@ storage/년/월 디렉토리를 만들고
 2. 모든 올라오는 공지사항을 저장후 최근 1주일 간의 데이터들과 마일리지 정보들을 카카오톡 챗봇에게 요청하면 그것들을 출력함.
 """
 if __name__ == '__main__':
-    createDir(mile_path)
-    createDir(body_path)
-    
+    createDir(md_path) 
     today = datetime.datetime.today()
     is_in_a_week = lambda today: today > today - datetime.timedelta(weeks=1)
 
