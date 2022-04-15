@@ -17,6 +17,7 @@ email_list = ['barahana123@kakao.com', 'save@kakao.com', 'insikwon@naver.com']
 
 comp_notice_url = "https://computer.knu.ac.kr/06_sub/02_sub.html?page={}&key=&keyfield=&category=&bbs_code=Site_BBS_25"
 md_path = '/home/barahana123/knu-cse-announcements-crawler/markdown'
+md_path = './markdown'
 NoticeInfo = namedtuple('NoticeInfo', 'link id title timestamp body source')
 
 def get_cse_notices(comp_notice_url):
@@ -91,11 +92,14 @@ def get_recent_timestamp(path):
     createDir(md_path)
     datas = glob(path+'/*')
     timestamp = []
-    for data in datas:
-        name = os.path.basename(data)
-        
-        timestamp.append(datetime.datetime.strptime(name[name.rfind('_')+1:name.index('.md')], "%Y-%m-%dT%H-%M"))
-    return sorted(timestamp, reverse=True)[0]
+    if datas == []:
+        return datetime.datetime.now()
+    else:
+        for data in datas:
+            name = os.path.basename(data)
+            
+            timestamp.append(datetime.datetime.strptime(name[name.rfind('_')+1:name.index('.md')], "%Y-%m-%dT%H-%M"))
+        return sorted(timestamp, reverse=True)[0]
 '''
 함수형으로 코드를 짤려고 노력
     예시:
