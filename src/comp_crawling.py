@@ -16,7 +16,8 @@ from glob import glob
 email_list = ['barahana123@kakao.com', 'save@kakao.com', 'insikwon@naver.com']
 
 comp_notice_url = "https://computer.knu.ac.kr/06_sub/02_sub.html?page={}&key=&keyfield=&category=&bbs_code=Site_BBS_25"
-md_path = '/home/barahana123/knu-cse-announcements-crawler/markdown'
+md_path = '~/knu-cse-announcements-crawler/markdown'
+body_path = '~/knu-cse-announcements-crawler/body'
 NoticeInfo = namedtuple('NoticeInfo', 'link id title timestamp body source')
 
 def get_cse_notices(comp_notice_url):
