@@ -9,7 +9,6 @@ from collections import namedtuple
 import requests
 from bs4 import BeautifulSoup
 from markdownify import markdownify
-from functional import seq
 from fileutils import *
 from send_email import send_email
 import datetime
@@ -91,6 +90,7 @@ def make_md(source):
 
     return document
 def get_recent_timestamp(path):
+    createDir(md_path)
     datas = glob(path+'/*')
     timestamp = []
     for data in datas:
