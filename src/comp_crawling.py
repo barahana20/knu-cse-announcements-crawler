@@ -151,4 +151,7 @@ if __name__ == '__main__':
             write_to_storage(info_to_filename_and_makrdown(noticeinfo))
             if is_newer_than_recent(noticeinfo):
                 for email in email_list:
-                    send_email(noticeinfo.title, noticeinfo.body, email)
+                    if '마일리지' in noticeinfo.body:
+                        send_email(noticeinfo.title, noticeinfo.link, email)
+                    else:
+                        send_email(noticeinfo.title, noticeinfo.link, email)
